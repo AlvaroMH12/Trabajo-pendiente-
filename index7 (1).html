@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet">
+<title>Periódico Digital</title>
+<title>Periódico Digital</title>
+<style>
+ body { font-family: 'Times New Roman', serif; margin: 0; padding: 0; background: #eee; }
+.header { background: #333; color: #fff; padding: 10px 20px; text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ; }
+.nav { background: #444; padding: 10px 0; ;}
+.contenedor {position: relative; width: 45.5%; overflow: hidden;}
+.img { display: flex; width: 100%;}
+.img img {height: 150px; width:100% ;transition: all 0.15s ease;}
+.img input {display: none;}
+.dots { display: flex; justify-content: center; margin: 5px;}
+.dots label {height: 20px; width:20px ; border: solid wheat; border-radius: 50%; cursor: pointer; transition: all 0.15s; margin: 5px;}
+.dots label:hover { background: white;}
+#img1:checked ~ .m1 {margin-left: 0;}
+#img2:checked ~ .m2 {margin-left: -100%;}
+#img3:checked ~ .m3 {margin-left: -200%;}
+#img4:checked ~ .m4 {margin-left: -300%;}
+#img5:checked ~ .m5 {margin-left: -400%;}
+#img6:checked ~ .m6 {margin-left: -500%;}
+.mostrar-menu,.esconder-menu {font-size: 30px;cursor: pointer;display: none;}
+.mostrar-menu {order: 1;}
+.nav ul a:hover,.mostrar-menu:hover,.esconder-menu:hover {color: #333; background: white;}
+#check {display: none;}
+@media screen and (max-width:700px){
+  .mostrar-menu,
+  .esconder-menu {
+      display: block;
+  }
+  .nav a {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: azure;
+      right: -100%;
+      top: 0;
+      text-align: center;
+      padding: 100px 0px;
+      z-index: 100;
+      transition: 0.8s;
+  }
+  .nav a {
+      display: block;
+      padding: 20px;
+  }
+  .esconder-menu {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+  }
+  #check:checked ~ .nav {
+      right: 0;
+  }
+}
+.nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; }
+.nav ul li { margin: 0 15px; }
+.nav ul li a { color: #fff; text-decoration: none;  }
+
+.main { padding: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; }
+.section { margin-bottom: 20px; width: 100%; }
+.news-article { background: #fff; border: 1px solid #ddd; padding: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.news-article button { background: black;color: white; display: inline-flex;
+  justify-content: center;align-items: center;width: 150px;height: 20px;font-size: 10px;font-family:'Roboto',sans-serif;font-weight: 100;border: none;cursor: pointer;text-transform: uppercase;transition: .3s ease all;}
+.news-article img { width: 300px; height: 200px;display: flex; text-align: center; justify-content: center;}
+.category { color: #333; font-weight: bold; }
+.footer { background: #333; color: #fff; text-align: center; padding: 20px; margin-top: 20px; }
+.footer i { margin: 10px;}
+
+@media (min-width: 768px) {
+  .section { width: 49%; }
+}
+@media (min-width: 1024px) {
+  .section { width: 32%; }
+}
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Periódico Digital</h1>
+    
+  </div>
+  
+  <div class="nav">
+      <input type="checkbox" id="check">
+        <label for="check" class="mostrar-menu">
+           &#8801
+        </label>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Deportes</a></li>
+      <li><a href="#">Familia</a></li>
+      <li><a href="#">Aventura</a></li>
+      <li><a href="#">Tecnología</a></li>
+      <li><a href="#">Niños</a></li>
+      <label for="check" class="esconder-menu">
+          &#215
+      </label>
+    </ul>
+  </div>
+  
+  <div class="main">
+    <!-- Sección de Deportes -->
+    <div class="section" >
+      <h2 class="category">Inicio</h2>
+      <article class="news-article">
+        <h3>Bienvenido</h3>
+        <li>Informar: Proporcionar noticias y análisis sobre eventos actuales y temas relevantes para mantener a la audiencia informada sobre lo que está sucediendo en el mundo.</li>
+        <li>Educar: Ofrecer contenido que ayude a la audiencia a comprender mejor los acontecimientos, tendencias y problemas tanto a nivel local como global.</li>
+        <li>Entretener: Publicar contenido diverso, como artículos de opinión, reportajes culturales, reseñas de películas, música o libros, para entretener a la audiencia y mantener su interés.</li>
+        <li>Generar debate: Fomentar la discusión y el intercambio de ideas al proporcionar plataformas para que los lectores expresen sus opiniones y comentarios sobre diversos temas.</li>
+        <li>Crear comunidad: Construir una comunidad en línea alrededor de intereses comunes, noticias locales o temáticas específicas, permitiendo la interacción entre los lectores y fomentando un sentido de pertenencia.</li>
+        <li>Innovar: Experimentar con nuevas formas de presentar noticias y contenido, aprovechando las ventajas de la tecnología digital para ofrecer experiencias de lectura más atractivas y personalizadas.</li>
+        <div class="contenedor">
+          <div class="img">
+              <input type="radio" name="slider" id="img1">
+              <input type="radio" name="slider" id="img2">
+              <input type="radio" name="slider" id="img3">
+              <input type="radio" name="slider" id="img4">
+              <input type="radio" name="slider" id="img5">
+              <input type="radio" name="slider" id="img6">
+              <img src="D:\Alvaro\informar.jpg" class="m1" alt="img1" >
+              <img src="D:\Alvaro\educar.jpg" class="m2" alt="img2" >
+              <img src="D:\Alvaro\entretener.jpg" class="m3" alt="img3" >
+              <img src="D:\Alvaro\debate.jpg" class="m4" alt="img4" >
+              <img src="D:\Alvaro\comunidad.jpg" class="m5" alt="img5" >
+              <img src="D:\Alvaro\innovacion.jpg" class="m6" alt="img6" >
+          </div>  
+          <div class="dots">
+              <label for="img1"></label>
+              <label for="img2"></label>
+              <label for="img3"></label>
+              <label for="img4"></label>
+              <label for="img5"></label>
+              <label for="img6"></label>
+              
+          </div>
+        <button class="boton" type="submit"> Mas informacion ...
+    </div>
+    
+  </div>
+  
+    <div class="section">
+      <h2 class="category">Deportes</h2>
+      <article class="news-article">
+        <h3>Universitario vs. Botafogo: Fabián Bustos en la previa del encuentro: "El grupo está fuerte en lo anímico"</h3>
+        <p>"El grupo está fuerte en lo anímico. Sabemos de nuestras limitaciones, condiciones y creemos que el trabajo y compromiso grupal nos ayudarán a achicar ventajas frente a jugadores que han estado en otras ligas importantes. No vamos a ganar porque estemos fuerte de la cabeza, sino porque tenemos que trabajar bien, anular al rival, tener visión, intentar hacerle daño cuando se pueda, tratar de manejar situaciones. Para ellos es un partido definitorio por el inicio que han tenido, para nosotros es un duelo importante", manifestó.</p>
+        <iframe width="460" height="315" src="https://www.youtube.com/embed/wuTv8IV5lLg?si=0XIEhvBsCgWmq3d-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <button class="boton" type="submit"> Mas informacion ...
+          
+      </article>
+    </div>
+    <!-- Sección de Familia -->
+    <div class="section">
+      <h2 class="category">Familia</h2>
+      <article class="news-article">
+        <h3></h3>
+        <p>Pasar tiempo en familia es crucial por muchas razones. Aquí hay algunas:</p>
+           <li>Vínculos emocionales más fuertes: El tiempo en familia fortalece los lazos emocionales entre los miembros de la familia. </li>
+           <li>Apoyo emocional: La familia es a menudo el primer lugar al que acudimos en busca de apoyo emocional. Pasar tiempo juntos brinda la oportunidad de hablar sobre problemas, preocupaciones y alegrías, y recibir el apoyo necesario de quienes más nos importan.</li>
+           <li>Valores y tradiciones: La familia es donde aprendemos muchos de nuestros valores y tradiciones. Pasar tiempo juntos permite transmitir estos valores de generación en generación, fortaleciendo la identidad familiar y creando recuerdos significativos.</li>
+           <li>Desarrollo de habilidades sociales: El tiempo en familia proporciona un entorno seguro para que los niños y adultos practiquen habilidades sociales importantes, como la comunicación, la resolución de problemas y el trabajo en equipo.</li>
+           <li>Mejor comunicación: Pasar tiempo de calidad juntos fomenta una comunicación abierta y saludable dentro de la familia. Esto puede ayudar a prevenir conflictos y resolver problemas de manera más efectiva cuando surgen.</li>
+           <li>Reducción del estrés: El tiempo en familia puede ser una forma efectiva de reducir el estrés y relajarse. Compartir momentos divertidos y relajantes juntos puede mejorar el estado de ánimo y fortalecer la resiliencia familiar frente a los desafíos.</li>
+           <img src="data:image/jpeg;base64,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">
+      </article>
+    </div>
+    <!-- Agrega más secciones aquí -->
+    <div class="section">
+      <h2 class="category">Aventuras</h2>
+      <article class="news-article">
+        <h3>CONSEJOS DE VIAJES</h3>
+        <p>El turismo se transforma con nuevas tendencias en función a las necesidades generacionales y de estilo de vida del viajero. Una de las que más destaca en el público joven es el turismo de aventura. La sensación de adrenalina y las ganas de capturar estos momentos, ha hecho que la solicitud de estas experiencias se incrementen en las agencias de viajes.</p>
+        <img src="https://elcomercio.pe/resizer/JM7Ebl0lXh7d_JadaJLqhKJ9eC0=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/X366HQAYUVDLNGT7F6L26ZCH3Y.jpg">
+      </article>
+    </div>
+    <div class="section">
+      <h2 class="category">Tecnologias</h2>
+      <article class="news-article">
+        <h3>Nvidia presentó nuevos microchips de inteligencia artificial de alta capacidad</h3>
+        <p>“Necesitamos GPU (unidades de procesamiento gráfico, ndlr) más grandes. (...) Me gustaría presentarles una gran, gran GPU”, dijo el presidente de la empresa, Jensen Huang, en una conferencia de desarrolladores en California, Estados Unidos.
+  
+          Los GPU son chips con una capacidad de cálculo muy superior a la de los microprocesadores clásicos, conocidos como CPU.
+          
+          El gigante tecnológico estadounidense anunció así la salida de su procesador más poderoso hasta la fecha, junto a un programa en una plataforma informática denominada “Blackwell”, en homenaje a David Blackwell, primer universitario negro que ingresó en la Academia Nacional de Ciencias.</p>
+          <img src="https://elcomercio.pe/resizer/_Fh9YzBkhjw25NOveHEXza8qRzw=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/DE3OAICL2BF4PMBLBJOWILQ24U.jpg">
+      </article>
+    </div>
+    <div class="section">
+      <h2 class="category">Niños</h2>
+      <article class="news-article">
+        <h3>¿Cómo elegir juguetes que impulsen el desarrollo físico y mental de mi hijo?</h3>
+        <p>En un mundo donde la crianza de los hijos presenta constantes desafíos y oportunidades, los juguetes se revelan como poderosas herramientas para el desarrollo integral de los más pequeños. Atrás quedaron los días en que los juguetes eran meros objetos de entretenimiento; hoy en día, son reconocidos por sus contribuciones significativas al bienestar físico y psicológico de los niños. Desde bloques de construcción que fomentan habilidades espaciales y motoras hasta juegos de rol que impulsan la empatía y la resolución de conflictos, estos objetos de juego son esenciales para cultivar mentes jóvenes y saludables.</p>
+        <img src="https://elcomercio.pe/resizer/hwJy9dcqexxvM7oOotq_FUhGi2I=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/2R5HFRJCZZBIXJD6GIWV65IU3A.jpg">
+      </article>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <p>© 2024 Periódico Digital</p>
+    <i class="bi bi-youtube"></i>
+    <i class="bi bi-facebook"></i>
+    <i class="bi bi-whatsapp"></i>
+  </div>
+  
+  </body>
+  </html>
+  
